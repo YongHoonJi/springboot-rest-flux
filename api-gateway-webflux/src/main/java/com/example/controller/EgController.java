@@ -2,6 +2,7 @@ package com.example.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.info.User;
@@ -9,7 +10,8 @@ import com.example.info.User;
 import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Mono;
 
-@RestController("eg")
+@RequestMapping("job")
+@RestController
 public class EgController {
 	@ApiOperation(value = "", notes = "Gets user (json)", response = User.class)
 	@GetMapping("/user")

@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.info.JobRequest;
@@ -12,7 +13,8 @@ import com.example.info.JobRequest;
 import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Mono;
 
-@RestController("job")
+@RequestMapping("job")
+@RestController
 public class JobRequestController {
 	@ApiOperation(value = "", notes = "Request a job", response = JobRequest.class)
 	@GetMapping("/request")
