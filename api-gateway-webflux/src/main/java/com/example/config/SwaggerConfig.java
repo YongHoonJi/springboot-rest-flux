@@ -26,8 +26,8 @@ public class SwaggerConfig {
     
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
-                .title("특허번역 API Spec(prototype)")
-                .description("\"특허번역 서비스 API 문서\"")
+                .title("API Spec(prototype)")
+                .description("Description")
                 .version("0.0.1")
                 .license("")
                 .licenseUrl("")

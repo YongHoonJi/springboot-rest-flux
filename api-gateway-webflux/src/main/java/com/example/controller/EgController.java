@@ -9,7 +9,7 @@ import com.example.info.User;
 import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Mono;
 
-@RestController
+@RestController("eg")
 public class EgController {
 	@ApiOperation(value = "", notes = "Gets user (json)", response = User.class)
 	@GetMapping("/user")
