@@ -10,7 +10,7 @@ public class TaskRequest {
 	@ApiModelProperty(required = true, notes = "작업 아이디")
 	private long id;	
 	@ApiModelProperty(required = true, notes = "사용자 정보")
-	private User uer;
+	private User user;
 	@ApiModelProperty(required = true, notes = "파일 이름")
 	private String fileName;
 	@ApiModelProperty(required = true, notes = "파일 확장자")

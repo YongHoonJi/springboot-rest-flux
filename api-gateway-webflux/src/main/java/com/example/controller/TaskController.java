@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.info.TaskRequest;
 import com.example.info.TaskResponse;
 import com.example.info.TaskStatus;
+import com.example.info.User;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,8 +26,11 @@ import reactor.core.publisher.Mono;
 public class TaskController {
 	@ApiOperation(value = "", notes = "Request a task(systran)", response = TaskRequest.class)
 	@PostMapping("/request/{taskId}")
-	public Mono<ResponseEntity<TaskRequest>> request(@RequestBody TaskRequest req) {
-		return this.buildMockRequest(req)
+	public Mono<ResponseEntity<TaskRequest>> request(
+			@PathVariable long taskId,
+			@RequestBody User user
+			) {
+		return this.buildMockRequest(taskId, user)
 				.map( s -> ResponseEntity.ok(s))
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
@@ -66,8 +70,8 @@ public class TaskController {
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}	
 	
-	private Mono<TaskRequest> buildMockRequest(TaskRequest req) {
-		return Mono.just(new TaskRequest(req.getId(), req.getUer(), "file.pdf", "pdf", "N", "binary", new Date(), 400L, "word", "enko", new Date(),
+	private Mono<TaskRequest> buildMockRequest(long taskId, User user) {
+		return Mono.just(new TaskRequest(taskId, user, "file.pdf", "pdf", "N", "binary", new Date(), 400L, "word", "enko", new Date(),
 				"patent", "TR"));
 	}
 	

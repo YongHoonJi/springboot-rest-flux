@@ -2,35 +2,38 @@ package com.example.controller;
 
 
 
+import java.util.Arrays;
+import java.util.Date;
+
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.info.User;
-
+import com.example.info.TranslationRequest;
+import com.example.info.TranslationResponse;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import reactor.core.publisher.Mono;
 
-@RequestMapping("trans")
+@RequestMapping("translate")
 @RestController
 public class TranslationController {
-	@ApiOperation(value = "", notes = "get a user info", response = User.class)
-	@GetMapping("/{userId}")
-	public Mono<ResponseEntity<User>> request(
-			@ApiParam(value = "사용자 id", required = true)
-			@PathVariable long userId
+	@ApiOperation(value = "", notes = "Request a task(systran)", response = TranslationResponse.class)
+	@PostMapping("/translate/{taskId}")
+	public Mono<ResponseEntity<TranslationResponse>> request(
+			@PathVariable long taskId,
+			@RequestBody TranslationRequest req
 			) {
-		return this.buidlMockuser(userId)
+		return this.buildMonoMock(taskId, req)
 				.map( s -> ResponseEntity.ok(s))
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	
-	private Mono<User> buidlMockuser(long userId) {
-		// expect getting from repository
-		return Mono.just(new User(userId, "sam", "test@a.com"));
+	private Mono<TranslationResponse> buildMonoMock(long requestId, TranslationRequest req) {
+		return Mono.just(new TranslationResponse(requestId, Arrays.asList("텍스트1", "텍스트2"), Arrays.asList("text1", "text2"), "koen", "RBMT",
+				new Date(), new Date()));
 	}
 	
 }
