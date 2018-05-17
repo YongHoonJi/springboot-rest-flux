@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiParam;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RequestMapping("job")
+@RequestMapping("task")
 @RestController
 public class TaskController {
 	@ApiOperation(value = "", notes = "Request a task(systran)", response = TaskRequest.class)
