@@ -21,8 +21,7 @@ public class EgController {
 	
 	private Mono<User> getFromRepository() {
 		// expect getting from repository
-		return Mono.just(new User("sam", "test@a.com"));
+		return Mono.just(new User(1L, "sam", "test@a.com"));
 	}
-	
 
 }

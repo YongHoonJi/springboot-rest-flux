@@ -6,19 +6,17 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Value;
 
 @Value
-public class JobRequest {
+public class TaskRequest {
 	@ApiModelProperty(required = true, notes = "작업 아이디")
 	private long id;	
-	@ApiModelProperty(required = true, notes = "요청 아이디")
-	private long userId;
-	@ApiModelProperty(required = true, notes = "사용자 이메일")
-	private String email;
-	@ApiModelProperty(required = true, notes = "사용자 이름")
-	private String userName;
+	@ApiModelProperty(required = true, notes = "사용자 정보")
+	private User uer;
 	@ApiModelProperty(required = true, notes = "파일 이름")
 	private String fileName;
 	@ApiModelProperty(required = true, notes = "파일 확장자")
 	private String fileExtension;
+	@ApiModelProperty(required = true, notes = "공보여부(Y or N)")
+	private String officialReportYn;	
 	@ApiModelProperty(required = true, notes = "파일 정보(바이너리)")
 	private String fileData;
 	@ApiModelProperty(required = true, notes = "작업 요청 일자")
