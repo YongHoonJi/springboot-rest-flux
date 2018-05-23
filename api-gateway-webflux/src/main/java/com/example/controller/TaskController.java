@@ -35,7 +35,7 @@ public class TaskController {
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	
-	@ApiOperation(value = "", notes = "check a task(systran)", response = TaskStatus.class)
+	@ApiOperation(value = "", notes = "Check a task(systran)", response = TaskStatus.class)
 	@GetMapping("/check/{userId}/{taskId}")
 	public Mono<ResponseEntity<TaskStatus>> check(
 			@ApiParam(value = "사용자 id", required = true)
