@@ -4,7 +4,6 @@
 package com.example.dto;
 
 
-import com.example.dto.tables.AlpakkaSlickJavadslTestUsers;
 import com.example.dto.tables.User;
 
 import java.util.ArrayList;
@@ -31,17 +30,12 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TestTemp extends SchemaImpl {
 
-    private static final long serialVersionUID = 1554809217;
+    private static final long serialVersionUID = -1472395417;
 
     /**
      * The reference instance of <code>test_temp</code>
      */
     public static final TestTemp TEST_TEMP = new TestTemp();
-
-    /**
-     * The table <code>test_temp.alpakka_slick_javadsl_test_users</code>.
-     */
-    public final AlpakkaSlickJavadslTestUsers ALPAKKA_SLICK_JAVADSL_TEST_USERS = com.example.dto.tables.AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS;
 
     /**
      * The table <code>test_temp.user</code>.
@@ -73,7 +67,6 @@ public class TestTemp extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS,
             User.USER);
     }
 }

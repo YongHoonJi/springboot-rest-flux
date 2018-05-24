@@ -4,7 +4,6 @@
 package com.example.dto;
 
 
-import com.example.dto.tables.AlpakkaSlickJavadslTestUsers;
 import com.example.dto.tables.User;
 
 import javax.annotation.Generated;
@@ -31,7 +30,6 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
-    public static final Index ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY = Indexes0.ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY;
     public static final Index USER_PRIMARY = Indexes0.USER_PRIMARY;
     public static final Index USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = Indexes0.USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74;
 
@@ -40,8 +38,7 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
-        public static Index ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY = Internal.createIndex("PRIMARY", AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS, new OrderField[] { AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS.ID }, true);
-        public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", User.USER, new OrderField[] { User.USER.USER_ID }, true);
-        public static Index USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = Internal.createIndex("UK_dnq7r8jcmlft7l8l4j79l1h74", User.USER, new OrderField[] { User.USER.ACCOUNT }, true);
+        public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", User.USER, new OrderField[] { User.USER.ID }, true);
+        public static Index USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = Internal.createIndex("UK_dnq7r8jcmlft7l8l4j79l1h74", User.USER, new OrderField[] { User.USER.EMAIL }, true);
     }
 }

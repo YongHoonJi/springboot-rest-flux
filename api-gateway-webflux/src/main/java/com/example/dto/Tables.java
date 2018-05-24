@@ -4,7 +4,6 @@
 package com.example.dto;
 
 
-import com.example.dto.tables.AlpakkaSlickJavadslTestUsers;
 import com.example.dto.tables.User;
 
 import javax.annotation.Generated;
@@ -22,11 +21,6 @@ import javax.annotation.Generated;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
-
-    /**
-     * The table <code>test_temp.alpakka_slick_javadsl_test_users</code>.
-     */
-    public static final AlpakkaSlickJavadslTestUsers ALPAKKA_SLICK_JAVADSL_TEST_USERS = com.example.dto.tables.AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS;
 
     /**
      * The table <code>test_temp.user</code>.

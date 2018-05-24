@@ -21,7 +21,7 @@ public class UserRepository {
 	
 	@Transactional(readOnly = true)
 	public UserRecord getUser(int id) {
-		return dsl.selectFrom(USER).where(USER.USER_ID.eq(id)).fetchSingle();
+		return dsl.selectFrom(USER).where(USER.ID.eq(id)).fetchSingle();
 	}
 
 }

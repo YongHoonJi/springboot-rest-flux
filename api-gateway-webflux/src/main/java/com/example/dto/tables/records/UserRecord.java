@@ -28,33 +28,33 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Record3<Integer, String, String> {
 
-    private static final long serialVersionUID = 79538851;
+    private static final long serialVersionUID = 1971889932;
 
     /**
-     * Setter for <code>test_temp.user.user_id</code>. 순번
+     * Setter for <code>test_temp.user.id</code>. 순번
      */
-    public void setUserId(Integer value) {
+    public void setId(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>test_temp.user.user_id</code>. 순번
+     * Getter for <code>test_temp.user.id</code>. 순번
      */
-    public Integer getUserId() {
+    public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>test_temp.user.account</code>. 계정
+     * Setter for <code>test_temp.user.email</code>. 계정
      */
-    public void setAccount(String value) {
+    public void setEmail(String value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>test_temp.user.account</code>. 계정
+     * Getter for <code>test_temp.user.email</code>. 계정
      */
-    public String getAccount() {
+    public String getEmail() {
         return (String) get(1);
     }
 
@@ -109,7 +109,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public Field<Integer> field1() {
-        return User.USER.USER_ID;
+        return User.USER.ID;
     }
 
     /**
@@ -117,7 +117,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public Field<String> field2() {
-        return User.USER.ACCOUNT;
+        return User.USER.EMAIL;
     }
 
     /**
@@ -133,7 +133,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public Integer component1() {
-        return getUserId();
+        return getId();
     }
 
     /**
@@ -141,7 +141,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public String component2() {
-        return getAccount();
+        return getEmail();
     }
 
     /**
@@ -157,7 +157,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public Integer value1() {
-        return getUserId();
+        return getId();
     }
 
     /**
@@ -165,7 +165,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public String value2() {
-        return getAccount();
+        return getEmail();
     }
 
     /**
@@ -181,7 +181,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public UserRecord value1(Integer value) {
-        setUserId(value);
+        setId(value);
         return this;
     }
 
@@ -190,7 +190,7 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
      */
     @Override
     public UserRecord value2(String value) {
-        setAccount(value);
+        setEmail(value);
         return this;
     }
 
@@ -228,11 +228,11 @@ public class UserRecord extends UpdatableRecordImpl<UserRecord> implements Recor
     /**
      * Create a detached, initialised UserRecord
      */
-    public UserRecord(Integer userId, String account, String name) {
+    public UserRecord(Integer id, String email, String name) {
         super(User.USER);
 
-        set(0, userId);
-        set(1, account);
+        set(0, id);
+        set(1, email);
         set(2, name);
     }
 }

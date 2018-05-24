@@ -22,44 +22,44 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class User implements Serializable {
 
-    private static final long serialVersionUID = -1508947608;
+    private static final long serialVersionUID = 1882227294;
 
-    private Integer userId;
-    private String  account;
+    private Integer id;
+    private String  email;
     private String  name;
 
     public User() {}
 
     public User(User value) {
-        this.userId = value.userId;
-        this.account = value.account;
+        this.id = value.id;
+        this.email = value.email;
         this.name = value.name;
     }
 
     public User(
-        Integer userId,
-        String  account,
+        Integer id,
+        String  email,
         String  name
     ) {
-        this.userId = userId;
-        this.account = account;
+        this.id = id;
+        this.email = email;
         this.name = name;
     }
 
-    public Integer getUserId() {
-        return this.userId;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getAccount() {
-        return this.account;
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -74,8 +74,8 @@ public class User implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder("User (");
 
-        sb.append(userId);
-        sb.append(", ").append(account);
+        sb.append(id);
+        sb.append(", ").append(email);
         sb.append(", ").append(name);
 
         sb.append(")");

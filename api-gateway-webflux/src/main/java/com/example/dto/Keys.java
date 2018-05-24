@@ -4,9 +4,7 @@
 package com.example.dto;
 
 
-import com.example.dto.tables.AlpakkaSlickJavadslTestUsers;
 import com.example.dto.tables.User;
-import com.example.dto.tables.records.AlpakkaSlickJavadslTestUsersRecord;
 import com.example.dto.tables.records.UserRecord;
 
 import javax.annotation.Generated;
@@ -34,14 +32,12 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<AlpakkaSlickJavadslTestUsersRecord, Integer> IDENTITY_ALPAKKA_SLICK_JAVADSL_TEST_USERS = Identities0.IDENTITY_ALPAKKA_SLICK_JAVADSL_TEST_USERS;
     public static final Identity<UserRecord, Integer> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<AlpakkaSlickJavadslTestUsersRecord> KEY_ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY = UniqueKeys0.KEY_ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY;
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
     public static final UniqueKey<UserRecord> KEY_USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = UniqueKeys0.KEY_USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74;
 
@@ -55,13 +51,11 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
-        public static Identity<AlpakkaSlickJavadslTestUsersRecord, Integer> IDENTITY_ALPAKKA_SLICK_JAVADSL_TEST_USERS = Internal.createIdentity(AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS, AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS.ID);
-        public static Identity<UserRecord, Integer> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.USER_ID);
+        public static Identity<UserRecord, Integer> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.ID);
     }
 
     private static class UniqueKeys0 {
-        public static final UniqueKey<AlpakkaSlickJavadslTestUsersRecord> KEY_ALPAKKA_SLICK_JAVADSL_TEST_USERS_PRIMARY = Internal.createUniqueKey(AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS, "KEY_alpakka_slick_javadsl_test_users_PRIMARY", AlpakkaSlickJavadslTestUsers.ALPAKKA_SLICK_JAVADSL_TEST_USERS.ID);
-        public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", User.USER.USER_ID);
-        public static final UniqueKey<UserRecord> KEY_USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = Internal.createUniqueKey(User.USER, "KEY_user_UK_dnq7r8jcmlft7l8l4j79l1h74", User.USER.ACCOUNT);
+        public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", User.USER.ID);
+        public static final UniqueKey<UserRecord> KEY_USER_UK_DNQ7R8JCMLFT7L8L4J79L1H74 = Internal.createUniqueKey(User.USER, "KEY_user_UK_dnq7r8jcmlft7l8l4j79l1h74", User.USER.EMAIL);
     }
 }

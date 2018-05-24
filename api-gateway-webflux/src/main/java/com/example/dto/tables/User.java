@@ -39,7 +39,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class User extends TableImpl<UserRecord> {
 
-    private static final long serialVersionUID = -1296753032;
+    private static final long serialVersionUID = -204687607;
 
     /**
      * The reference instance of <code>test_temp.user</code>
@@ -55,14 +55,14 @@ public class User extends TableImpl<UserRecord> {
     }
 
     /**
-     * The column <code>test_temp.user.user_id</code>. 순번
+     * The column <code>test_temp.user.id</code>. 순번
      */
-    public final TableField<UserRecord, Integer> USER_ID = createField("user_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "순번");
+    public final TableField<UserRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "순번");
 
     /**
-     * The column <code>test_temp.user.account</code>. 계정
+     * The column <code>test_temp.user.email</code>. 계정
      */
-    public final TableField<UserRecord, String> ACCOUNT = createField("account", org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "계정");
+    public final TableField<UserRecord, String> EMAIL = createField("email", org.jooq.impl.SQLDataType.VARCHAR(100).nullable(false), this, "계정");
 
     /**
      * The column <code>test_temp.user.name</code>. 이름
